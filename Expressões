@@ -1,0 +1,38 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+		
+		const real EULER = 2.71828 
+		real a =1.0 , b= 4.5, c = 1.5, f = 2.0, g = 1.0, v = 2.0
+		real primeraOperacao, segundaOperacao, terceiraOperacao, quartaOperacao, z
+
+		//z = e^[((b - c)^v + a*b))/f]^g
+	
+		primeraOperacao = mat.potencia((b-c),v)
+		segundaOperacao = a * b
+		terceiraOperacao = (primeraOperacao + segundaOperacao) / f
+		quartaOperacao = mat.potencia(terceiraOperacao, g)
+		z = mat.potencia(EULER, quartaOperacao)
+
+
+		real y, bhaskara
+		//y = Ln|(-b +b^2 -4*a*c)/(2*a)|
+		
+		bhaskara = (-b + b*b - 4*a*c)/ (2*a)
+		y = mat.logaritmo(bhaskara,EULER)
+
+
+		real k, i = 4.0, j = 2.0, teta = 30.0, cosseno
+		//k = √(i + j^2 -2*2cos[θ])
+		
+		cosseno = mat.cosseno(teta)
+		k = mat.raiz(i + j*j -2*cosseno, 2.0)
+
+		escreva("Valor de Z: ",mat.arredondar(z,2),"\nValor de Y: ",mat.arredondar(y, 2),"\nValor de K: ",mat.arredondar(k, 2))
+		
+		
+	}
+}
