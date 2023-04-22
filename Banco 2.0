@@ -1,0 +1,27 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro valorDoSaque, notasDe50, notasDe20, notasDe10, resto
+		
+
+
+		escreva("Insira o valor que seja sacar:\n")
+		leia(valorDoSaque)
+
+		notasDe50 = valorDoSaque / 50
+		resto = valorDoSaque % 50
+
+		notasDe20 = resto / 20
+		resto = resto % 20
+
+		notasDe10 = resto / 10
+
+		escreva(notasDe50," nota[s] de 50 reais, ",notasDe20," nota[s] de 20 reais e ",notasDe10," nota[s] de 10 reais.")
+		
+
+		
+		
+	}
+}
