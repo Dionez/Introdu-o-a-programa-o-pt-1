@@ -1,0 +1,24 @@
+programa
+{
+	inclua biblioteca Matematica-->mat
+	
+	funcao inicio()
+	{
+		real numero, numeroNovo
+		inteiro numeroTruncado, numeroDeCasas
+
+		escreva("Forneça um valor real com numeros decimais:\n")
+		leia(numero)
+
+		escreva("Forneça o numero de casas decimais desejadas:\n")
+		leia(numeroDeCasas)
+
+		numeroTruncado = numero * mat.potencia(10, numeroDeCasas)
+		
+		numeroNovo = numeroTruncado / mat.potencia(10.0, numeroDeCasas)
+
+		escreva("O numero com ",numeroDeCasas," casas decimais será: ",numeroNovo)
+
+		
+	}
+}
