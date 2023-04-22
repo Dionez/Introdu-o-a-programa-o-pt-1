@@ -1,0 +1,29 @@
+programa
+{
+	inclua biblioteca Matematica -->mat
+	
+	funcao inicio()
+	{
+
+		inteiro numeroBinario, bitUm, bitDois, bitTres, digitoUm, digitoDois, digitoTres, numeroDecimal
+		
+		escreva("Forneça um número binário de no máximo 3 dígitos\n")
+		leia(numeroBinario)
+
+		bitUm = numeroBinario /100
+		bitDois = (numeroBinario /10) % 10
+		bitTres = numeroBinario %10
+
+		digitoUm = bitUm * mat.potencia(2, 2)
+		digitoDois = bitDois * mat.potencia(2, 1)
+		digitoTres = bitTres * mat.potencia(2, 0)
+
+		numeroDecimal = digitoUm + digitoDois + digitoTres
+
+		escreva("O número na base decimal é: ",numeroDecimal)
+
+		
+
+		
+	}
+}
