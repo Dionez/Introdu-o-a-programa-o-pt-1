@@ -1,0 +1,29 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real distanciaEmKM, litros, eficienciaDoVeiculo
+
+		escreva("Forneça a quantidade de litros abastecidos:\n")
+		leia(litros)
+
+		escreva("Forneça a distância percorrida em Km:\n")
+		leia(distanciaEmKM)
+
+		logico distanciaInvalida, litrosInvalidos
+
+		distanciaInvalida = distanciaEmKM <=0
+		litrosInvalidos = litros <= 0
+
+		se(distanciaInvalida ou litrosInvalidos)
+		{
+			escreva("Valores de entrada inválidos, tente novamente\n")
+		}
+		senao
+		{
+			eficienciaDoVeiculo = distanciaEmKM / litros
+			escreva("A eficiencia do veículo é de ",eficienciaDoVeiculo," Km/L")
+		}
+	}
+}
