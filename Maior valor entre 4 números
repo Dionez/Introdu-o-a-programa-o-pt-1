@@ -1,0 +1,42 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real a,b,c,d
+
+
+		escreva("Forneça o valor de A, B, C e D:\n")
+		leia(a,b,c,d)
+
+		se(a>b e a>c)
+		{
+			se(a>d)
+			{
+				escreva("O maior valor é:",a)
+			}
+		}
+
+		se(b>a e b>c)
+		{
+			se(b>d)
+			{
+				escreva("O maior valor é:",b)
+			}
+		}
+		se(c>a e c>b)
+		{
+			se(c>d)
+			{
+				escreva("O maior valor é:",c)
+			}
+		}
+		se(d>a e d>b)
+		{
+			se(d>c)
+			{
+				escreva("O maior valor é:",d)
+			}
+		}
+	}
+}
