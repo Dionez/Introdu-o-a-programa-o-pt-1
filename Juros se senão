@@ -1,0 +1,72 @@
+programa
+{
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		real valorDaCompra, novoValorDaCompra, juros,valorDasParcelas
+		inteiro numeroDeParcelas
+	
+		
+		escreva("Este programa calcula o valor do protudo com de acordo com a quantiadede de parcelas escolhidas\n")
+		escreva("As opções de parcelas são:\n")
+		escreva("1 parcela sem juros\n2 parcelas com 1.1% de juros\n3 parcelas com 2.7% de juros\n4 parcelas com 4.2% de juros\n5 parcelas com 5.2% de juros\n") 
+		escreva("Caso escolha pagar a vista, o preço do produto não irá se alterar\n")
+		escreva("Informe o valor da compra[R$]: ")
+		leia(valorDaCompra)
+		escreva("Em quantas vezes deseja parcelar ? ")
+		leia(numeroDeParcelas)
+
+		logico numeroDeParcelasInvalido = (numeroDeParcelas < 0 ou numeroDeParcelas > 5)
+		logico valorDaCompraInvalido = valorDaCompra < 0
+			
+		se(numeroDeParcelasInvalido ou valorDaCompraInvalido)
+		{
+			escreva("Valores de entrada inválidos, tente novamente.")
+			
+		}
+		senao se(numeroDeParcelas>0 e numeroDeParcelas<2)
+		{
+			escreva("O valor da compra será pago à vista: R$",valorDaCompra)
+		}
+		senao se(numeroDeParcelas>1 e numeroDeParcelas<3)
+		{
+			escreva("O valor da compra será parcelado em 2 vezes com juros de 1,1%.\n")
+			juros = 1.1 / 100
+			novoValorDaCompra = valorDaCompra + (valorDaCompra * juros)
+			escreva("O valor total da compra será de R$",mat.arredondar(novoValorDaCompra, 2))
+			valorDasParcelas = novoValorDaCompra / 2
+			escreva("\nCom 2 parcelas de ",mat.arredondar(valorDasParcelas, 2))
+		}
+		senao se(numeroDeParcelas>2 e numeroDeParcelas<4)
+		{
+			escreva("O valor da compra será parcelado em 3 vezes com juros de 2,7%.\n")
+			juros = 2.7 / 100
+			novoValorDaCompra = valorDaCompra + (valorDaCompra * juros)
+			escreva("O valor total da compra será de R$",mat.arredondar(novoValorDaCompra, 2))
+			valorDasParcelas = novoValorDaCompra / 3
+			escreva("\nCom 3 parcelas de ",mat.arredondar(valorDasParcelas, 2))
+		}
+		senao se(numeroDeParcelas>3 e numeroDeParcelas<5)
+		{
+			escreva("O valor da compra será parcelado em 4 vezes com juros de 4,2%.\n")
+			juros = 4.2 / 100
+			novoValorDaCompra = valorDaCompra + (valorDaCompra * juros)
+			escreva("O valor total da compra será de R$",mat.arredondar(novoValorDaCompra, 2))
+			valorDasParcelas = novoValorDaCompra / 4
+			escreva("\nCom 4 parcelas de ",mat.arredondar(valorDasParcelas, 2))
+		}
+		senao
+		{
+			escreva("O valor da compra será parcelado em 5 vezes com juros de 5,9%.\n")
+			juros = 5.9 / 100
+			novoValorDaCompra = valorDaCompra + (valorDaCompra * juros)
+			escreva("O valor total da compra será de R$",mat.arredondar(novoValorDaCompra, 2))
+			valorDasParcelas = novoValorDaCompra / 5
+			escreva("\nCom 5 parcelas de ",mat.arredondar(valorDasParcelas, 2))
+		}
+		
+		
+	}
+}
