@@ -1,0 +1,77 @@
+programa
+{
+	inclua biblioteca Util
+ --> u
+	
+	funcao inicio()
+	{
+		inteiro opcaoDoJogador, sorteio
+		
+		
+		escreva("Pedra, papel e tesoura\n")
+		escreva("Digite 1 para pedra\n")
+		escreva("Digite 2 para papael\n")
+		escreva("Digite 3 para pedra\n")
+
+		leia(opcaoDoJogador)
+
+		se(opcaoDoJogador < 1 ou opcaoDoJogador >3)
+		{
+			escreva("Opção inválida, tente novamente.")
+			
+		}
+		sorteio = u.sorteia(1, 3)
+
+		se((opcaoDoJogador<2 e opcaoDoJogador>0) e  (sorteio<2 e sorteio>0))
+		{
+			escreva("Opção do jogador: Pedra.\nOpção do computador: Pedra\n")
+			escreva("DEU EMPATE")
+			
+		}
+		se((opcaoDoJogador<2 e opcaoDoJogador>0) e  (sorteio<3 e sorteio>1))
+		{
+			escreva("Opção do jogador: Pedra.\nOpção do computador: Papel\n")
+			escreva("VOCÊ PERDEU")
+		}
+		se((opcaoDoJogador<2 e opcaoDoJogador>0) e  (sorteio<4 e sorteio>2))
+		{
+			escreva("Opção do jogador: Pedra.\nOpção do computador: Tesoura\n")
+			escreva("VOCÊ VENCEU!!!")
+		}
+
+		se((opcaoDoJogador<3 e opcaoDoJogador>1) e  (sorteio<2 e sorteio>0))
+		{
+			escreva("Opção do jogador: Papel.\nOpção do computador: Pedra\n")
+			escreva("VOCÊ VENCEU!!!")
+		}
+		se((opcaoDoJogador<3 e opcaoDoJogador>1) e  (sorteio<3 e sorteio>1))
+		{
+			
+			escreva("Opção do jogador: Papel.\nOpção do computador: Papel\n")
+			escreva("DEU EMPATE")
+		}
+		se((opcaoDoJogador<3 e opcaoDoJogador>1) e  (sorteio<4 e sorteio>2))
+		{
+			escreva("Opção do jogador: Papel.\nOpção do computador: Tesoura\n")
+			escreva("VOCÊ PERDEU")
+		}
+		se((opcaoDoJogador<4 e opcaoDoJogador>2) e  (sorteio<2 e sorteio>0))
+		{
+			escreva("Opção do jogador: Tesoura.\nOpção do computador: Pedra\n")
+			escreva("VOCÊ PERDEU")
+		}
+		se((opcaoDoJogador<4 e opcaoDoJogador>2) e  (sorteio<3 e sorteio>1))
+		{
+			escreva("Opção do jogador: Tesoura.\nOpção do computador: Papel\n")
+			escreva("VOCÊ VENCEU!!!")
+		}
+		se((opcaoDoJogador<4 e opcaoDoJogador>2) e  (sorteio<4 e sorteio>2))
+		{
+			escreva("Opção do jogador: Tesoura.\nOpção do computador: Tesoura\n")
+			escreva("DEU EMPATE")
+		}
+
+		
+		
+	}
+}
