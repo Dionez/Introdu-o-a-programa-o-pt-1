@@ -10,7 +10,7 @@ programa
 		
 		escreva("Pedra, papel e tesoura\n")
 		escreva("Digite 1 para pedra\n")
-		escreva("Digite 2 para papael\n")
+		escreva("Digite 2 para papel\n")
 		escreva("Digite 3 para pedra\n")
 
 		leia(opcaoDoJogador)
