@@ -1,0 +1,41 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real valorDaHoraEmReais = 6.0//baseado no salário mínimo atual
+		inteiro horasPorSemana 
+		real valorDoSalario
+		real horasExtras
+		
+		escreva("Forneça a quantidade de horas trabalhadas por semana:\n")
+		leia(horasPorSemana)
+
+		logico horasInvalidas = horasPorSemana<0
+		
+		se(horasInvalidas)
+		{
+			escreva("Valor inválido, tente novamente.")
+			retorne
+		}
+
+		se(horasPorSemana <= 40)
+		{
+			valorDoSalario = (valorDaHoraEmReais * horasPorSemana)
+			escreva("O salário será de R$",valorDoSalario," sem nenhum bônus.")
+		}
+		senao se(horasPorSemana >40 e horasPorSemana <=60)
+		{
+			horasExtras = horasPorSemana - 40
+			
+			valorDoSalario = (40 * valorDaHoraEmReais) + (horasExtras * (valorDaHoraEmReais * 1.5))
+			escreva("O salário será de R$",valorDoSalario," com o bônus de 50% sobre as horas extras.")
+		}
+		senao 
+		{
+			horasExtras = horasPorSemana - 60
+			valorDoSalario = (40 * valorDaHoraEmReais) + (20 * (valorDaHoraEmReais * 1.5)) + (horasExtras * (valorDaHoraEmReais * 2))
+			escreva("O salário será de R$",valorDoSalario," com o bônus de 50% sobre as primeiras 20 horas extras e 100% sobre as restantes.")
+		}
+	}
+}
