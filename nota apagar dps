@@ -1,0 +1,71 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real notaUm, notaDois, notaTres, media, notaReposicao, aux, mediaNova
+
+		escreva("Informe a 1ª nota.\n")
+		leia(notaUm)
+		escreva("Informe a 2ª nota.\n")
+		leia(notaDois)
+		escreva("Informe a 3ª nota.\n")
+		leia(notaTres)
+
+		se((notaUm < 0 ) ou (notaDois < 0 ) ou (notaTres < 0))
+		{
+			escreva("O sistema não admite valores negativos. Tente novamente.")
+			retorne
+		}
+		
+		
+		media = (notaUm + notaDois + notaTres) / 3
+
+		inteiro mediaDaEscola = 7
+
+		se(media >= mediaDaEscola)
+		{
+			escreva("O aluno foi aprovado com média ",media)		
+		}
+		se(media < mediaDaEscola)
+		{
+			escreva("O aluno com a média ",media)
+			escreva("Entre com a nota da reposição.\n")
+			leia(notaReposicao)
+			se(notaUm <= notaDois e notaUm <= notaTres)
+			{
+			aux = notaUm
+			notaUm = notaReposicao
+			mediaNova = (notaUm + notaDois + notaTres) / 3
+			escreva("A nota antiga ",aux," seré substituida pela nota da reposição: ",notaReposicao)
+			escreva("A média atual será ",mediaNova)
+			}
+			se(notaDois <= notaUm e notaDois <= notaTres)
+			{
+			aux = notaDois
+			notaDois = notaReposicao
+			mediaNova = (notaUm + notaDois + notaTres) / 3
+			escreva("A nota antiga ",aux," seré substituida pela nota da reposição: ",notaReposicao)
+			escreva("A média atual será ",mediaNova)
+			}
+			se(notaTres <= notaUm e notaTres <= notaDois)
+			{
+			aux = notaTres
+			notaTres = notaReposicao
+			mediaNova = (notaUm + notaDois + notaTres) / 3
+			escreva("A nota antiga ",aux," seré substituida pela nota da reposição: ",notaReposicao)
+			escreva("A média atual será ",mediaNova)
+			}
+			se(mediaNova >= mediaDaEscola)
+			{
+				escreva("O aluno foi aprovado.")
+			}
+			se(mediaNova < mediaDaEscola)
+			{
+				escreva("O aluno foi reprovado.")
+			}
+		
+			
+		}
+	}
+}
