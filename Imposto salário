@@ -1,0 +1,29 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real salMin = 1320.0
+		real sal, imp
+
+
+		escreva("Informe o valor do salário em R$:\n")
+		leia(sal)
+
+		se(sal <= (3 * salMin))
+		{
+			imp = 0.05 * sal
+			escreva("O imposto cobrado será de R$", imp)
+		}
+		se(sal > (3*salMin) e sal <= (10*salMin))
+		{
+			imp = 0.1 * sal
+			escreva("O imposto cobrado será de R$", imp)	
+		}
+		se(sal > (10 * salMin))
+		{
+			imp = 0.15 * salMin
+			escreva("O imposto cobrado será de R$", imp)	
+		}
+	}
+}
