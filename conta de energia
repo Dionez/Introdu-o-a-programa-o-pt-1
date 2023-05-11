@@ -1,0 +1,65 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+
+	funcao inicio()
+	{
+		real consumoCliente, valorKwH, valorDaConta
+		inteiro bandeira
+		real taxaAmarela = 0.013, taxaVermelhaUm = 0.041, taxaVermelhaDois = 0.062
+
+		escreva("Informe o consumo do clinete em KwH: \n")
+		leia(consumoCliente)
+ 
+		escreva("Informe o preço do KhW em R$: \n")
+		leia(valorKwH)
+
+		logico valorInvalidoKwH = valorKwH <= 0
+		se(valorInvalidoKwH)
+		{
+			escreva("Valor inválido para o preço do KwH. Tente novamente.")
+			retorne 
+		}
+		
+		escreva("Digite 1 para bandeira verde.\n")
+		escreva("Digite 2 para bandeira amarela.\n")
+		escreva("Digite 3 para bandeira vermelha - patamar 1.\n")
+		escreva("Digite 4 para bandeira vermelha - patamar 2.\n")
+		leia(bandeira)
+
+		logico bandeiraInvalida = (bandeira <= 0 ou bandeira > 5)
+		
+		se(bandeiraInvalida)
+		{
+			escreva("Bandeira inexistente, tente novamente.")
+			retorne
+		}
+
+		logico bandeiraVerde = bandeira == 1
+		logico bandeiraAmarela = bandeira == 2
+		logico bandeiraVermelhaUm = bandeira == 3
+		logico bandeiraVermelhaDois = bandeira == 4
+
+		se (bandeiraVerde)
+		{
+			valorDaConta = consumoCliente * valorKwH
+			escreva("O valor da conta será de ",valorDaConta)
+		}
+		se(bandeiraAmarela)
+		{
+			valorDaConta = consumoCliente * (valorKwH + (valorKwH * taxaAmarela))
+			
+			escreva("O valor da conta será de ",mat.arredondar(valorDaConta, 2))
+		}
+		se(bandeiraVermelhaUm)
+		{
+			valorDaConta = consumoCliente * (valorKwH + (valorKwH * taxaVermelhaUm))
+			escreva("O valor da conta será de ",mat.arredondar(valorDaConta, 2))
+		}
+		se(bandeiraVermelhaDois)
+		{
+			valorDaConta = consumoCliente * (valorKwH + (valorKwH * taxaVermelhaDois))
+			escreva("O valor da conta será de ",mat.arredondar(valorDaConta, 2))
+		}
+	}
+}
