@@ -1,0 +1,59 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+		
+		const real EULER = 2.71
+		real coeficienteB, temperaturaInicial, temperaturaFinal, resistenciaIncial, resistenciaFinal, temperaturaInicialEmKelvin, temperaturaFinalEmKelvin
+		real razaoEntreResistencias
+		real resistenciaFornecida
+		real novaRazaoEntreResistencias
+		real novaTemperaturaFinal
+	
+		//calculo de B
+
+		escreva("Forneça um temperatura [°C] inicial e final da tabela:\n")
+		leia(temperaturaInicial, temperaturaFinal)
+
+		temperaturaInicialEmKelvin = temperaturaInicial + 273.15
+		temperaturaFinalEmKelvin = temperaturaFinal + 273.15
+
+		escreva("Forneça as respectivas resistencias de cada temperatura de acordo com a tabela:\n")
+		leia(resistenciaIncial,resistenciaFinal)
+		logico resistenciaInvalida = ((resistenciaIncial <= 0) ou (resistenciaIncial <=0))
+
+		se(resistenciaInvalida)
+		{
+			escreva("Este programa não admite potencias negativas ou nulas. Tente novamente.")
+			retorne
+		}
+		
+		razaoEntreResistencias = resistenciaFinal / resistenciaIncial
+		
+		coeficienteB = (mat.potencia(temperaturaInicial, -1.0) + mat.logaritmo(razaoEntreResistencias,EULER) ) / mat.potencia(temperaturaFinal, -1.0)
+		
+		escreva("O coeficiente B será: ",mat.valor_absoluto(mat.arredondar(coeficienteB, 2)))
+
+		//Item II
+		
+		escreva("\nForneça um resistencia qualquer dentro do intervalo de [",resistenciaIncial," , ",resistenciaFinal,"] para que se obtenha uma nova temperatura final.")
+		escreva("\nOBS: Temperatura inicial será igual a ",resistenciaIncial,"\n")
+		leia(resistenciaFornecida)
+		se(resistenciaFornecida > resistenciaIncial ou resistenciaFornecida < resistenciaFinal )
+		{
+			escreva("A RESISTENCIA PRECISA ESTAR DENTRO DO INTERVALO [",resistenciaIncial," , ",resistenciaFinal,"]")
+			retorne 
+		}
+
+		
+		senao
+		{
+			novaRazaoEntreResistencias = resistenciaFornecida / resistenciaIncial
+			novaTemperaturaFinal = mat.potencia(temperaturaInicial, -1.0) +  ((mat.logaritmo(novaRazaoEntreResistencias,EULER)) / coeficienteB)
+			escreva("A nova temperatura será de ",mat.arredondar(mat.potencia(novaTemperaturaFinal, -1.0),2),"K, ou ",mat.arredondar(mat.potencia(novaTemperaturaFinal - 273.15, -1.0),2),"°C" )
+		}
+		
+	}
+}
